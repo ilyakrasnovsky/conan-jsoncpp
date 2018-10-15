@@ -4,11 +4,11 @@ import os, shutil
 
 class JsoncppConan(ConanFile):
     name        = "jsoncpp"
-    version     = "1.8.4"
+    version     = "2baad49"
     description = "A C++ library for interacting with JSON."
-    url         = "https://github.com/theirix/conan-jsoncpp"
-    license     = "Public Domain or MIT (https://github.com/open-source-parsers/jsoncpp/blob/master/LICENSE)"
-    homepage    = "https://github.com/open-source-parsers/jsoncpp"
+    url         = "https://github.com/ilyakrasnovsky/conan-jsoncpp"
+    license     = "Public Domain or MIT (https://github.com/ilyakrasnovsky/jsoncpp/blob/master/LICENSE)"
+    homepage    = "https://github.com/ilyakrasnovsky/jsoncpp"
     settings    = "os", "compiler", "arch", "build_type"
 
     exports = ["LICENSE.md"]
@@ -32,7 +32,7 @@ class JsoncppConan(ConanFile):
             self.options.use_pic = True
 
     def source(self):
-        tools.get("https://github.com/open-source-parsers/jsoncpp/archive/%s.tar.gz" % self.version)
+        tools.get("https://github.com/ilyakrasnovsky/jsoncpp/archive/%s.tar.gz" % self.version)
         os.rename("jsoncpp-%s" % self.version, "sources")
         os.rename("sources/CMakeLists.txt", "sources/CMakeListsOriginal.txt")
         shutil.copy("CMakeLists.txt", "sources/CMakeLists.txt")
