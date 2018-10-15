@@ -3,3 +3,6 @@ test_package/build/
 *.pyc
 build
 sources
+
+#vscode
+/.vscode/
